@@ -15,14 +15,14 @@ class FirstSampleTest(unittest.TestCase):
         options.browser_version = "114.0"
         options.platform_name = "Windows 11"
         lt_options = {};
-        lt_options["project"] = "SmartUI-CI-Coupa";
+        lt_options["project"] = "SmartUI-CI-Coupa2-viewport";
         lt_options["w3c"] = True;
         lt_options["plugin"] = "python-python";
-        lt_options["smartUI.project"] = "Layout_Shift_Test11-CI-Coupa"
+        lt_options["smartUI.project"] = "Layout_Shift_Test11-CI-Coupa2"
         lt_options["console"] = True
         lt_options["network"] = True
-        lt_options["build"] = "Python CI-SmartUI-Coupa"
-        lt_options["name"] = "Python-CI-SmartUI-Coupa"
+        lt_options["build"] = "Python CI-SmartUI-Coupa2"
+        lt_options["name"] = "Python-CI-SmartUI-Coupa2"
         lt_options["selenium_version"] = "4.0.0"
         options.set_capability('LT:Options', lt_options);
         self.driver = webdriver.Remote(
@@ -39,10 +39,11 @@ class FirstSampleTest(unittest.TestCase):
             driver.set_page_load_timeout(30)
             print('Loading URL')
             driver.get("https://www.coupa.com/partners/partner-connect-program")
-            driver.execute_script('smartui.takeFullPageScreenshot="Screen 1"')
+            driver.execute_script('smartui.takeScreenshot="Screen 1"')
             print("1st screenshot")
             driver.implicitly_wait(10)
-            driver.execute_script('smartui.takeFullPageScreenshot="Screen 2"')
+            driver.execute_script('smartui.takeScreenshot="Screen 2"')
+            #FullPage
             print("2nd screenshot")
             driver.execute_script("lambda-status=passed")
         except:
