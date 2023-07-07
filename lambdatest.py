@@ -39,6 +39,8 @@ class FirstSampleTest(unittest.TestCase):
             driver.set_page_load_timeout(30)
             print('Loading URL')
             driver.get("https://www.coupa.com/partners/partner-connect-program")
+            element = driver.find_element(By.XPATH, "//button[@id='truste-consent-button']")
+            element.click()
             driver.execute_script('smartui.takeScreenshot="Screen 1"')
             print("1st screenshot")
             driver.implicitly_wait(10)
@@ -46,8 +48,7 @@ class FirstSampleTest(unittest.TestCase):
             #FullPage
             print("2nd screenshot")
             driver.execute_script("lambda-status=passed")
-            element = driver.find_element(By.XPATH, "/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/button[2]")
-            element.click()
+            
         except:
             driver.execute_script("lambda-status=failed")
             print("Failed")
