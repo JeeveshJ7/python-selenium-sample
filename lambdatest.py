@@ -46,6 +46,8 @@ class FirstSampleTest(unittest.TestCase):
             #FullPage
             print("2nd screenshot")
             driver.execute_script("lambda-status=passed")
+            element = driver.find_element(By.XPATH, "/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/button[2]")
+            element.click()
         except:
             driver.execute_script("lambda-status=failed")
             print("Failed")
