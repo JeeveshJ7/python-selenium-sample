@@ -15,14 +15,14 @@ class FirstSampleTest(unittest.TestCase):
         options.browser_version = "114.0"
         options.platform_name = "Windows 11"
         lt_options = {};
-        lt_options["project"] = "Untitled";
+        lt_options["project"] = "SmartUI-CI";
         lt_options["w3c"] = True;
         lt_options["plugin"] = "python-python";
-        lt_options["smartUI.project"] = "Layout_Shift_Test6"
+        lt_options["smartUI.project"] = "Layout_Shift_Test10-CI"
         lt_options["console"] = True
         lt_options["network"] = True
-        lt_options["build"] = "Python Demo"
-        lt_options["name"] = "Python Demo Test"
+        lt_options["build"] = "Python CI-SmartUI"
+        lt_options["name"] = "Python-CI-SmartUI"
         lt_options["selenium_version"] = "4.0.0"
         options.set_capability('LT:Options', lt_options);
         self.driver = webdriver.Remote(
